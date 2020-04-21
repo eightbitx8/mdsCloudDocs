@@ -4,6 +4,11 @@ Welcome to the MadDonkeySoftware Cloud main documentation repository. The main g
 of this repository is to provide documentation for high-level or cross-product
 concerns.
 
+## Communications
+
+* [![Gitter](https://badges.gitter.im/mdsCloud/community.svg)](https://gitter.im/mdsCloud/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+* [Project board](https://github.com/orgs/MadDonkeySoftware/projects/1)
+
 ## History
 
 The MadDonkeySoftware Cloud spawned from a learning experiment to create a state
