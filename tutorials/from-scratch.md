@@ -159,9 +159,9 @@ another is the ease in scripting our setup in the future so we can destroy and
 recreate our stack quickly and easily. This is a topic that will be covered in
 more detail later in our document though. 
 
-First, lets go ahead and modify then execute this sample `curl` command. Make
-sure to update both the `userId` and `password` fields before running the
-command.
+First, lets go ahead and modify then execute this sample `curl` command. Before
+running the command, make sure to update both the `userId` and `password` fields
+with the values created in the [Initial Configuration of MDS CLI](#initial-configuration-of-mds-cli) step.
 
 ```sh
 curl --insecure --request POST 'https://localhost:8081/v1/register' \
@@ -181,7 +181,7 @@ configuration as well as the sample application to use the new value. We will
 not cover that scenario in this document though as the likelihood of that
 happening is quite small. 
 
-Next you will need to create a container that Terraform will use in order to
+Next, you will need to create a container that Terraform will use in order to
 track state in a distributed way. If you are unfamiliar with Terraform do not
 worry. The terraform configuration is already built for our sample application
 so all we need to do is make a few small tweaks. It is worth noting that the
@@ -233,6 +233,8 @@ MDS CLI have been configured, you can simply run `prep.sh`, `docker-compose up`
 then the below shell script to fully re-create a MDS Cloud in-a-box stack.
 
 ```sh
+rm -f ~/.mds/cache
+
 curl --insecure --request POST 'https://localhost:8081/v1/register' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -255,10 +257,10 @@ mds fs create --env local sample-tf-state
 ### Configure Kibana to view logs
 
 If you would like a little more insight into what is happening in the background
-of your MDS Cloud stack but find that reading the logs from the docker on the
-console to be difficult MDS Cloud includes a ELK stack. Below is a quick list of
-how to configure Kibana so that logs emitted from MDS Cloud in-a-box can be
-filtered and read more easily.
+of your MDS Cloud stack, but would rather not read the docker logs on the
+console, MDS Cloud includes an ELK stack. Below is a quick list of how to
+configure Kibana so that logs emitted from MDS Cloud in-a-box can be filtered
+and read more easily.
 
 * Log in to the [Kibana UI](http://localhost:5601)
   * User: elastic
